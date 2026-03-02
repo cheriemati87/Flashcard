@@ -1,64 +1,64 @@
-<script>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Flashcard Seconda Guerra Mondiale</title>
 
-const cards = [
-{
-q:"In che anno iniziò la Seconda Guerra Mondiale?",
-o:["1937","1938","1939","1940"],
-a:"1939",
-e:"Una guerra mondiale coinvolge molti paesi del mondo. Questa domanda chiede di riconoscere l'anno in cui iniziò il conflitto."
-},
-{
-q:"Quale evento segnò l’inizio ufficiale del conflitto?",
-o:["Attacco a Pearl Harbor","Invasione della Polonia","Invasione della Francia","Bombardamento di Londra"],
-a:"Invasione della Polonia",
-e:"'Conflitto' significa guerra. Un evento ufficiale è un fatto storico che fa iniziare una guerra tra più nazioni."
-},
-{
-q:"Chi era il leader della Germania nazista?",
-o:["Benito Mussolini","Adolf Hitler","Joseph Stalin","Winston Churchill"],
-a:"Adolf Hitler",
-e:"Un leader è la persona che guida un paese. Il termine 'nazista' indica il governo dittatoriale presente in Germania in quel periodo."
-},
-{
-q:"In che anno gli Stati Uniti entrarono in guerra?",
-o:["1939","1940","1941","1942"],
-a:"1941",
-e:"Entrare in guerra significa iniziare a partecipare militarmente a un conflitto già in corso."
-},
-{
-q:"Quale evento spinse gli Stati Uniti a entrare in guerra?",
-o:["Battaglia di Stalingrado","Sbarco in Normandia","Attacco a Pearl Harbor","Caduta di Berlino"],
-a:"Attacco a Pearl Harbor",
-e:"Un attacco militare è quando un esercito colpisce improvvisamente un altro paese o una base militare."
-},
-{
-q:"Quale fu la battaglia che segnò una svolta sul fronte orientale?",
-o:["El Alamein","Midway","Stalingrado","Ardenne"],
-a:"Stalingrado",
-e:"Una battaglia è uno scontro tra eserciti. 'Fronte orientale' indica la zona di guerra nell'est dell'Europa."
-},
-{
-q:"In che anno avvenne lo sbarco in Normandia?",
-o:["1942","1943","1944","1945"],
-a:"1944",
-e:"Uno sbarco militare avviene quando soldati arrivano dal mare per entrare in un territorio occupato."
-},
-{
-q:"Quale città fu colpita dalla prima bomba atomica?",
-o:["Tokyo","Hiroshima","Nagasaki","Osaka"],
-a:"Hiroshima",
-e:"Una bomba atomica è un'arma molto potente che utilizza energia nucleare e provoca grandi distruzioni."
-},
-{
-q:"In che anno terminò la guerra in Europa?",
-o:["1943","1944","1945","1946"],
-a:"1945",
-e:"La fine di una guerra avviene quando uno o più paesi smettono di combattere e firmano la resa."
-},
-{
-q:"Quale organizzazione nacque dopo la guerra?",
-o:["NATO","ONU","UE","Società delle Nazioni"],
-a:"ONU",
-e:"Un'organizzazione internazionale è un gruppo di paesi che collaborano per obiettivi comuni come pace e cooperazione."
+<style>
+body{
+font-family: Arial, sans-serif;
+background:#eef4ff;
+text-align:center;
+padding:20px;
 }
-];
+
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
+max-width:750px;
+margin:auto;
+box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+
+img{
+max-width:100%;
+height:300px;
+object-fit:cover;
+border-radius:10px;
+margin-bottom:15px;
+}
+
+button{
+margin:8px;
+padding:10px 15px;
+font-size:16px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+.voice{background:#ff9800;color:white;}
+.show{background:#2196F3;color:white;}
+.help{background:#9c27b0;color:white;}
+.next{background:#4CAF50;color:white;}
+
+#answer{
+margin-top:15px;
+font-weight:bold;
+color:green;
+}
+
+#explanation{
+margin-top:15px;
+background:#fff3cd;
+padding:15px;
+border-radius:10px;
+display:none;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🌍 Flashcard Mult
