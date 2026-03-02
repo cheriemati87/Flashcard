@@ -1,73 +1,3 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-<meta charset="UTF-8">
-<title>Flashcard - Seconda Guerra Mondiale</title>
-
-<style>
-body{
-    font-family: Arial, sans-serif;
-    background:#f0f6ff;
-    text-align:center;
-    padding:20px;
-}
-
-.card{
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    max-width:700px;
-    margin:auto;
-    box-shadow:0 0 15px rgba(0,0,0,0.2);
-}
-
-button{
-    margin:8px;
-    padding:10px 15px;
-    font-size:16px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-}
-
-.next{background:#4CAF50;color:white;}
-.show{background:#2196F3;color:white;}
-.voice{background:#ff9800;color:white;}
-.help{background:#9c27b0;color:white;}
-
-#answer{
-    margin-top:15px;
-    font-weight:bold;
-    color:green;
-}
-
-#explanation{
-    margin-top:15px;
-    background:#fff3cd;
-    padding:15px;
-    border-radius:10px;
-    display:none;
-}
-</style>
-</head>
-
-<body>
-
-<h1>📚 Flashcard Seconda Guerra Mondiale</h1>
-
-<div class="card">
-<h2 id="question"></h2>
-<div id="options"></div>
-
-<button class="voice" onclick="speak()">🔊 Ascolta</button>
-<button class="show" onclick="showAnswer()">✅ Mostra risposta</button>
-<button class="help" onclick="toggleExplanation()">💡 Spiegazione facile</button>
-<button class="next" onclick="nextCard()">➡ Prossima</button>
-
-<div id="answer"></div>
-<div id="explanation"></div>
-</div>
-
 <script>
 
 const cards = [
@@ -75,109 +5,60 @@ const cards = [
 q:"In che anno iniziò la Seconda Guerra Mondiale?",
 o:["1937","1938","1939","1940"],
 a:"1939",
-e:"La Seconda Guerra Mondiale iniziò quando la Germania invase la Polonia. 'Invasione' significa entrare con l'esercito in un altro paese usando la forza."
+e:"Una guerra mondiale coinvolge molti paesi del mondo. Questa domanda chiede di riconoscere l'anno in cui iniziò il conflitto."
 },
 {
 q:"Quale evento segnò l’inizio ufficiale del conflitto?",
 o:["Attacco a Pearl Harbor","Invasione della Polonia","Invasione della Francia","Bombardamento di Londra"],
 a:"Invasione della Polonia",
-e:"La Germania attaccò la Polonia il 1° settembre 1939. Dopo questo attacco molti paesi dichiararono guerra."
+e:"'Conflitto' significa guerra. Un evento ufficiale è un fatto storico che fa iniziare una guerra tra più nazioni."
 },
 {
 q:"Chi era il leader della Germania nazista?",
 o:["Benito Mussolini","Adolf Hitler","Joseph Stalin","Winston Churchill"],
 a:"Adolf Hitler",
-e:"Hitler era il capo della Germania nazista. 'Nazismo' era una dittatura basata su razzismo e controllo totale dello Stato."
+e:"Un leader è la persona che guida un paese. Il termine 'nazista' indica il governo dittatoriale presente in Germania in quel periodo."
 },
 {
 q:"In che anno gli Stati Uniti entrarono in guerra?",
 o:["1939","1940","1941","1942"],
 a:"1941",
-e:"Gli Stati Uniti entrarono dopo l'attacco giapponese a Pearl Harbor."
+e:"Entrare in guerra significa iniziare a partecipare militarmente a un conflitto già in corso."
 },
 {
 q:"Quale evento spinse gli Stati Uniti a entrare in guerra?",
 o:["Battaglia di Stalingrado","Sbarco in Normandia","Attacco a Pearl Harbor","Caduta di Berlino"],
 a:"Attacco a Pearl Harbor",
-e:"Pearl Harbor era una base militare americana nelle Hawaii attaccata dal Giappone."
+e:"Un attacco militare è quando un esercito colpisce improvvisamente un altro paese o una base militare."
 },
 {
 q:"Quale fu la battaglia che segnò una svolta sul fronte orientale?",
 o:["El Alamein","Midway","Stalingrado","Ardenne"],
 a:"Stalingrado",
-e:"La battaglia di Stalingrado fermò l'avanzata tedesca in Unione Sovietica. 'Fronte orientale' indica la guerra tra Germania e URSS."
+e:"Una battaglia è uno scontro tra eserciti. 'Fronte orientale' indica la zona di guerra nell'est dell'Europa."
 },
 {
 q:"In che anno avvenne lo sbarco in Normandia?",
 o:["1942","1943","1944","1945"],
 a:"1944",
-e:"Lo sbarco in Normandia fu l'arrivo dei soldati Alleati in Francia per liberarla dai nazisti."
+e:"Uno sbarco militare avviene quando soldati arrivano dal mare per entrare in un territorio occupato."
 },
 {
 q:"Quale città fu colpita dalla prima bomba atomica?",
 o:["Tokyo","Hiroshima","Nagasaki","Osaka"],
 a:"Hiroshima",
-e:"La bomba atomica è un'arma molto potente che usa energia nucleare causando enormi distruzioni."
+e:"Una bomba atomica è un'arma molto potente che utilizza energia nucleare e provoca grandi distruzioni."
 },
 {
 q:"In che anno terminò la guerra in Europa?",
 o:["1943","1944","1945","1946"],
 a:"1945",
-e:"La guerra finì in Europa quando la Germania si arrese agli Alleati."
+e:"La fine di una guerra avviene quando uno o più paesi smettono di combattere e firmano la resa."
 },
 {
 q:"Quale organizzazione nacque dopo la guerra?",
 o:["NATO","ONU","UE","Società delle Nazioni"],
 a:"ONU",
-e:"L'ONU è un'organizzazione internazionale creata per mantenere la pace tra i paesi."
+e:"Un'organizzazione internazionale è un gruppo di paesi che collaborano per obiettivi comuni come pace e cooperazione."
 }
 ];
-
-let index=0;
-
-function loadCard(){
-document.getElementById("question").innerText =
-(cards[index].q);
-
-let optHTML="";
-cards[index].o.forEach(o=>{
-optHTML+=`<p>• ${o}</p>`;
-});
-document.getElementById("options").innerHTML=optHTML;
-
-document.getElementById("answer").innerHTML="";
-document.getElementById("explanation").style.display="none";
-document.getElementById("explanation").innerHTML=cards[index].e;
-}
-
-function showAnswer(){
-document.getElementById("answer").innerHTML=
-"Risposta corretta: "+cards[index].a;
-}
-
-function toggleExplanation(){
-let exp=document.getElementById("explanation");
-exp.style.display = exp.style.display==="none" ? "block":"none";
-}
-
-function nextCard(){
-index=(index+1)%cards.length;
-loadCard();
-}
-
-function speak(){
-let text = cards[index].q + ". ";
-cards[index].o.forEach(o=>text+=o+". ");
-
-let speech = new SpeechSynthesisUtterance(text);
-speech.lang="it-IT";
-speech.rate=0.9;
-speechSynthesis.speak(speech);
-}
-
-loadCard();
-
-</script>
-
-</body>
-</html>
